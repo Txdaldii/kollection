@@ -31,6 +31,14 @@ Il risultato è **AB**BI*A* (**Grassetto = verde**, *corsivo = giallo*)
 Inseriamo allora **AB---** in Kordle Solver  
 Il risultato è:  
 abaca, abaco, abate, abati, abato...  
+  
+## Kotext  
+Kotext è semplicemente una chatroom in LAN.  
+Avvia il server, inserisci l'IP in un client, inserisci il nome utente, e sei nella chat!  
+Ovviamente la chat funziona solo nella rete locale.  
+Per ottenere un link ad un file, scrivi **file::/path/to/file.***  
+Nota: Se, ad esempio, *mario* è in chat e prova ad entrare un altro utente con il nome *mario*, a quest'ultimo verrà assegnato il nome *mario1*.  
+**NOTA: NON SI POSSONO AVVIARE PIÙ ISTANZE DEL SERVER NELLA STESSA RETE ALLO STESSO TEMPO**
 
 # Come Eseguire  
 Per eseguire uno dei file jar precompilati, apri un terminale/prompt dei comandi nel percorso dove si trova il file, poi scrivi  

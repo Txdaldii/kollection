@@ -16,7 +16,7 @@ Supponiamo che la parola corretta sia **ABACO** (il giocatore non la sa)
 Il giocatore inserisce **BANDO**  
 Verrebbe restituita questa stringa:  
 
-![](/kordle-ex.png)
+![](/kordle-example.png)
 #### Verde: La lettera è nella parola corretta, nella stessa posizione
 #### Giallo: La lettera è nella parola corretta, ma in una posizione diversa
 #### Grigio: La lettera NON è presente nella parola corretta  

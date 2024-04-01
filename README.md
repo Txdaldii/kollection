@@ -5,8 +5,7 @@
 Cosa contiene questa repo?
 - [Kordle](#kordle) - Un gioco di parole
 - [Kordle Solver](#kordle-solver) - Uno strumento di risoluzione di Kordle
-- Kotext (Client) - Una chatroom nel terminale
-- Kotext (Server) - Il backend della chatroom
+- [Kotext](#kotext) - Una chatroom nel terminale
 - [Come Eseguire](#come-eseguire)
 
 ## Kordle

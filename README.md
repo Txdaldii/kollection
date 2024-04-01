@@ -1,6 +1,6 @@
 # Kollection
 ##### Una lista di programmi 100% Kotlin
--logo
+![](/logo.png)
 
 Cosa contiene questa repo?
 - Kordle - Un gioco di parole

@@ -6,6 +6,7 @@ Cosa contiene questa repo?
 - [Kordle](#kordle) - Un gioco di parole
 - [Kordle Solver](#kordle-solver) - Uno strumento di risoluzione di Kordle
 - [Kotext](#kotext) - Una chatroom nel terminale
+- [Kotris](#kotris)
 - [Come Eseguire](#come-eseguire)
 
 ## Kordle
@@ -39,6 +40,20 @@ Per ottenere un link ad un file, scrivi **file::/path/to/file.***
 Nota: Se, ad esempio, *mario* è in chat e prova ad entrare un altro utente con il nome *mario*, a quest'ultimo verrà assegnato il nome *mario1*.  
 **NOTA: NON SI POSSONO AVVIARE PIÙ ISTANZE DEL SERVER NELLA STESSA RETE ALLO STESSO TEMPO**
 
+## Kotris  
+Il più semplice da comprendere, il più difficile da giocare.  
+Kotris è tris contro un bot, programmato per essere impossibile.  
+Così tanto impossibile che io stesso non sono sicuro che vincere sia possibile.  
+Il bot è un algoritmo **minimax**, designato per vincere/pareggiare ogni partita.  
+La griglia è strutturata così:  
+``- - -``  
+``- - -``  
+``- - -``  
+E si gioca inserendo un numero da 1 a 9, mappati così:  
+``1 2 3``  
+``4 5 6``  
+``7 8 9``  
+
 # Come Eseguire  
 Per eseguire uno dei file jar precompilati, apri un terminale/prompt dei comandi nel percorso dove si trova il file, poi scrivi  
-**java -jar *nomefile.jar***
+`**java -jar *nomefile.jar***`

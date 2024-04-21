@@ -72,6 +72,7 @@ fun getVoti(token: String) {
         3 -> voti = sortJSONArrayByKeyDouble(voti , "decimalValue")
         else -> voti = sortJSONArrayByKeyStr(voti, "evtDate")
     }
+    print("\n")
 
     val countMaterie = listaMaterie.size
     var stringaFiltri = "Filtra?\n1. Primo Quadrimestre\n2. Secondo Quadrimestre\n"
@@ -80,9 +81,10 @@ fun getVoti(token: String) {
     stringaFiltri += "Altro: Tutti i voti"
     println(stringaFiltri)
     val selFiltro = readln().toIntOrNull() ?: 0
+    print("\n")
     when (selFiltro) {
         1 -> voti = filtraJsonArray(voti, "periodPos", "1")
-        2 -> voti = filtraJsonArray(voti, "periodPos", "2")
+        2 -> voti = filtraJsonArray(voti, "periodPos", "3")
     }
     if (selFiltro - 3 in listaMaterie.indices) voti = filtraJsonArray(voti, "subjectDesc", listaMaterie[selFiltro - 3])
 

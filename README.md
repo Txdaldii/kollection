@@ -7,7 +7,7 @@ Cosa contiene questa repo?
 - [Kordle Solver](#kordle-solver) - Uno strumento di risoluzione di Kordle
 - [Kotext](#kotext) - Una chatroom nel terminale
 - [Kotris](#kotris)
-- [Klasse](#klasse)
+- [Klasse](#klasse) - Classeviva, nel terminale
 - [Come Eseguire](#come-eseguire)
 
 ## Kordle

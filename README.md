@@ -7,6 +7,7 @@ Cosa contiene questa repo?
 - [Kordle Solver](#kordle-solver) - Uno strumento di risoluzione di Kordle
 - [Kotext](#kotext) - Una chatroom nel terminale
 - [Kotris](#kotris)
+- [Klasse](#klasse)
 - [Come Eseguire](#come-eseguire)
 
 ## Kordle
@@ -53,6 +54,17 @@ E si gioca inserendo un numero da 1 a 9, mappati così:
 ``1 2 3``  
 ``4 5 6``  
 ``7 8 9``  
+
+## Klasse
+Claaseviva, nel terminale  
+Il progetto più complicato, con uso di json, liste e mappe  
+Per usarlo basta inserire nome utente e password  
+Funzioni:  
+- Vedere i voti, filtrati per quadrimestre o materia  
+- Vedere i compiti  
+- Calcolare la media dei voti  
+- Vedere le assenze  
+- Vedere le lezioni passate  
 
 # Come Eseguire  
 Per eseguire uno dei file jar precompilati, apri un terminale/prompt dei comandi nel percorso dove si trova il file, poi scrivi  

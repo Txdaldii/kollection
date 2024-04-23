@@ -65,13 +65,6 @@ fun getVoti(token: String) {
 
     val listaMaterie = getListaMaterie(voti)
 
-    println("Ordina per?\n1. Data\n2. Materia\n3. Voto")
-    val selSort = readln().toIntOrNull() ?: 0
-    when (selSort) {
-        2 -> voti = sortJSONArrayByKeyDouble(voti, "subjectId")
-        3 -> voti = sortJSONArrayByKeyDouble(voti , "decimalValue")
-        else -> voti = sortJSONArrayByKeyStr(voti, "evtDate")
-    }
     print("\n")
 
     val countMaterie = listaMaterie.size
@@ -81,12 +74,24 @@ fun getVoti(token: String) {
     stringaFiltri += "Altro: Tutti i voti"
     println(stringaFiltri)
     val selFiltro = readln().toIntOrNull() ?: 0
+
     print("\n")
+
     when (selFiltro) {
         1 -> voti = filtraJsonArray(voti, "periodPos", "1")
         2 -> voti = filtraJsonArray(voti, "periodPos", "3")
     }
     if (selFiltro - 3 in listaMaterie.indices) voti = filtraJsonArray(voti, "subjectDesc", listaMaterie[selFiltro - 3])
+
+    println("Ordina per?\n1. Data\n2. Materia\n3. Voto")
+    val selSort = readln().toIntOrNull() ?: 0
+    when (selSort) {
+        2 -> voti = sortJSONArrayByKeyDouble(voti, "subjectId")
+        3 -> voti = sortJSONArrayByKeyDouble(voti , "decimalValue")
+        else -> voti = sortJSONArrayByKeyStr(voti, "evtDate")
+    }
+
+    print("\n")
 
     for (i in 0..< voti.length()) {
         val voto = voti.getJSONObject(i)
@@ -182,10 +187,10 @@ fun calcolaMedie(token: String) {
         if (materia !in vMaterie.keys) vMaterie[materia] = decValue else vMaterie[materia] = vMaterie[materia]!! + decValue
     }
 
-    val m1Q = DecimalFormat("#.##").format(v1Q / c1Q).toDouble() // Approssimo a 2 cifre decimali
-    val m2Q = DecimalFormat("#.##").format(v2Q / c2Q).toDouble()
+    val m1Q = DecimalFormat("#.##").format(v1Q / c1Q).replace(',', '.').toDouble() // Approssimo a 2 cifre decimali
+    val m2Q = DecimalFormat("#.##").format(v2Q / c2Q).replace(',', '.').toDouble()
     val mMaterie: MutableMap<String, Double> = mutableMapOf()
-    for (i in 0 ..< listaMaterie.size) mMaterie[listaMaterie[i]] = DecimalFormat("#.##").format(vMaterie[listaMaterie[i]]!! / cMaterie[listaMaterie[i]]!!).toDouble()
+    for (i in 0 ..< listaMaterie.size) mMaterie[listaMaterie[i]] = DecimalFormat("#.##").format(vMaterie[listaMaterie[i]]!! / cMaterie[listaMaterie[i]]!!).replace(',', '.').toDouble()
     val lmMaterie = mMaterie.entries.sortedByDescending { it.value }.associate { it.key to it.value } // Dato che la mutableMap non è sortabile, devo usare una LinkedHashMap
 
     println("La media del primo quadrimestre è $m1Q")

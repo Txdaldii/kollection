@@ -34,8 +34,9 @@ Il risultato è:
 abaca, abaco, abate, abati, abato...  
   
 ## Kotext  
+##### Per l'ITT Pascal, selezionare l'IP ``10.22.x.x``
 Kotext è semplicemente una chatroom in LAN.  
-Avvia il server, inserisci l'IP in un client, inserisci il nome utente, e sei nella chat!  
+Avvia il server, seleziona l'IP, inseriscilo in un client, scegli un nome utente, e sei nella chat!  
 Ovviamente la chat funziona solo nella rete locale.  
 Per ottenere un link ad un file, scrivi **file::/path/to/file.***  
 Nota: Se, ad esempio, *mario* è in chat e prova ad entrare un altro utente con il nome *mario*, a quest'ultimo verrà assegnato il nome *mario1*.  

@@ -1,43 +1,26 @@
-// Codice di Rajendhiran Easu per prendere l'indirizzo IP
-// Questo codice viene usato in main.kt
+// Ispirazione da https://gist.github.com/NanoSpicer/231995bf7af8e57e9705f79d59277227
 
 import java.net.NetworkInterface
-import java.util.*
 
-object IPHelper {
-    val IPV4Address: String
-        get() = getIPAddress(true)
+fun getLocalIpList(): MutableList<String> {
+    val l = NetworkInterface
+        .getNetworkInterfaces()
+        .toList()
+        .flatMap { it.inetAddresses.toList() }
+    val l2: MutableList<String> = mutableListOf()
+    for (i in l.indices) if (!l[i].toString().startsWith("/fe") && !l[i].toString().startsWith("/0:0")) l2.add(l[i].toString().drop(1))
+    return l2
+}
 
-    val IPV6Address: String
-        get() = getIPAddress(false)
+fun getIP(): String {
+    val ipList = getLocalIpList()
+    var scelta: Int
 
-    /*
-     * Get IP address from first non-localhost interface
-     * @param userIPV4 true=return ipv4, false=return ipv6
-     * @return address or empty string
-     */
-    private fun getIPAddress(userIPV4: Boolean): String {
-        try {
-            Collections.list(NetworkInterface.getNetworkInterfaces()).forEach {
-                Collections.list(it.inetAddresses).forEach {
-                    if (!it.isLoopbackAddress) {
-                        val sAddr = it.hostAddress
-                        val isIPv4 = sAddr.indexOf(':') < 0
-                        if (userIPV4) {
-                            if (isIPv4) {
-                                return sAddr
-                            }
-                        } else {
-                            if (!isIPv4) {
-                                val delim = sAddr.indexOf('%')
-                                return if (delim < 0) sAddr.toUpperCase() else sAddr.substring(0, delim).toUpperCase()
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (ignored: Exception) {
-        }
-        return ""
-    }
+    do {
+        println("Scegli un indirizzo IP:")
+        for (i in ipList.indices) println("${i + 1}. ${ipList[i]}")
+        scelta = readln().toIntOrNull() ?: 0
+    } while (scelta - 1 !in ipList.indices)
+
+    return ipList[scelta - 1]
 }

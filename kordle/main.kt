@@ -130,6 +130,10 @@ fun main() {
             else println("Ce l'hai fatta in $l tentativi!")
         }
 
+        println("Scrivi 1 per cercare la definizione di $rightWord su Google.")
+        val scelta = readln().toIntOrNull() ?:0
+        if (scelta == 1) openLink(rightWord)
+
         println("Scrivi 1 per rigiocare.")
         rigioca = readLine()!!
     } while (rigioca == "1")

@@ -5,13 +5,26 @@ import java.net.ServerSocket
 import java.net.Socket
 import java.util.concurrent.ConcurrentHashMap
 
-class ChatServer(private val port: Int) {
+class ChatServer() {
     private val clients = ConcurrentHashMap<String, PrintWriter>()
 
     fun start() {
-        val serverSocket = ServerSocket(port)
-        val ip = IPHelper.IPV4Address // Da getip.kt
-        println("Server avviato sull'IP $ip, sulla porta $port")
+        var serverSocket: ServerSocket
+        while (true) {
+            val ip = getIP() // Da getip.kt
+            var port: Int
+            do {
+                print("Scegli una porta: ")
+                port = readln().toIntOrNull() ?: 12345
+            } while (port < 0 || port > 65535)
+            try {
+                serverSocket = ServerSocket(port)
+                println("Server avviato sull'IP $ip, sulla porta $port")
+                break
+            } catch (e: java.net.BindException) {
+                println("Indirizzo già in uso.")
+            }
+        }
 
         while (true) {
             val clientSocket = serverSocket.accept()
@@ -77,7 +90,6 @@ class ChatServer(private val port: Int) {
 
 fun main() {
     println("Kotext (server), di Tedaldi Alessandro")
-    val port = 12345
-    val server = ChatServer(port)
+    val server = ChatServer()
     server.start()
 }

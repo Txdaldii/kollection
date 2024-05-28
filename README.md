@@ -40,7 +40,7 @@ Avvia il server, seleziona l'IP, inseriscilo in un client, scegli un nome utente
 Ovviamente la chat funziona solo nella rete locale.  
 Per ottenere un link ad un file, scrivi **file::/path/to/file.***  
 Nota: Se, ad esempio, *mario* è in chat e prova ad entrare un altro utente con il nome *mario*, a quest'ultimo verrà assegnato il nome *mario1*.  
-**NOTA: NON SI POSSONO AVVIARE PIÙ ISTANZE DEL SERVER NELLA STESSA RETE ALLO STESSO TEMPO**
+**NOTA: NON SI POSSONO AVVIARE PIÙ ISTANZE DEL SERVER NELLA STESSA RETE E PORTA ALLO STESSO TEMPO**
 
 ## Kotris  
 Il più semplice da comprendere, il più difficile da giocare.  
